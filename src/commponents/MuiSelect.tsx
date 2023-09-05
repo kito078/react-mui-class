@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Box, TextField, MenuItem } from "@mui/material";
 
 function MuiSelect() {
-  const [country, setCountry] = useState("");
+  const [countries, setCountries] = useState<string[]>([]);
+  console.log(countries);
 
-  const handleChange = (e) => {
-    setCountry(e.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setCountries(typeof value === "string" ? value.split(",") : value);
   };
 
   return (
@@ -13,8 +15,14 @@ function MuiSelect() {
       <TextField
         label="Select Country"
         select
-        value={country}
+        value={countries}
         onChange={handleChange}
+        fullWidth
+        SelectProps={{ multiple: true }}
+        size="small"
+        color="secondary"
+        helperText="Please select your country"
+        error
       >
         <MenuItem value="IN">India</MenuItem>
         <MenuItem value="US">USA</MenuItem>
