@@ -1,11 +1,17 @@
-import React from 'react'
-import {Stack} from '@mui/material'
+import React from "react";
+import { Stack, Autocomplete, TextField } from "@mui/material";
+
+const skills = ["HTML", "CSS", "JAVASCRIPT", "TYPESCRIPT", "REACT"];
 
 function MuiAutocomplete() {
   return (
-    <Stac spacing={2} width='250px'>
-        Muiauto
-    </Stack>)
+    <Stack spacing={2} width="250px">
+      <Autocomplete
+        options={skills}
+        renderInput={(params) => <TextField {...params} label="skills" />}
+      />
+    </Stack>
+  );
 }
 
-export default MuiAutocomplete
+export default MuiAutocomplete;
