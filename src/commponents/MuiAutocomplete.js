@@ -5,6 +5,12 @@ const skills = ["HTML", "CSS", "JAVASCRIPT", "TYPESCRIPT", "REACT"];
 
 function MuiAutocomplete() {
   const [value, setValue] = useState(""); // Initialize value as an empty string
+  const [skill, setSkill] = useState(""); // Initialize value as an empty string
+
+  const skillsOptions = skills.map((skill, index) => ({
+    id: index + 1,
+    label: skill,
+  }));
 
   console.log(value);
 
@@ -16,6 +22,12 @@ function MuiAutocomplete() {
         value={value}
         onChange={(e, newValue) => setValue(newValue)}
         freeSolo
+      />
+      <Autocomplete
+        options={skillsOptions}
+        renderInput={(params) => <TextField {...params} label="Skills" />} // Use a proper label
+        value={value}
+        onChange={(e, newValue) => setValue(newValue)}
       />
     </Stack>
   );
