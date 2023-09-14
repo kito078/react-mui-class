@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@mui/material";
 
 function MuiCard() {
   return (
@@ -15,6 +22,10 @@ function MuiCard() {
             excepturi labore!
           </Typography>
         </CardContent>
+        <CardActions>
+          <Button size="small"> Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
       </Card>
     </Box>
   );
