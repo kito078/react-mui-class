@@ -10,6 +10,7 @@ import MuiRating from "./commponents/MuiRating";
 import MuiAutocomplete from "./commponents/MuiAutocomplete";
 import MuiLayout from "./commponents/MuiLayout";
 import MuiCard from "./commponents/MuiCard";
+import MuiAccordion from "./commponents/MuiAccordion";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       {/* <MuiRating /> */}
       {/* <MuiAutocomplete /> */}
       {/* <MuiLayout /> */}
-      <MuiCard />
+      {/* <MuiCard /> */}
+      <MuiAccordion />
     </div>
   );
 }
